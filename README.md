@@ -152,67 +152,7 @@ This allows:
 
 ---
 
-# 🔥 Example
 
-Click video:
 
-```
-http://localhost:3000/stream/sample.mp4
-```
 
----
 
-# 🛠️ Future Improvements
-
-* Video thumbnails
-* Authentication
-* Upload progress bar
-* Delete videos
-* Cloud storage (S3)
-* HLS streaming
-
----
-
-# 📸 Screenshots
-
-Place your screenshots in:
-
-```
-docs/
-```
-
-Example:
-
-```
-docs/ui.png
-```
-
----
-
-# 🎥 Demo Video
-
-Place video demo in:
-
-```
-docs/demo.mp4
-```
-
----
-
-# ⭐ Why This Project is Useful
-
-This project demonstrates:
-
-* Rust Backend Development
-* Async Programming
-* Media Streaming
-* HTTP Range Requests
-* File Upload Handling
-
-Perfect for:
-
-* Portfolio
-* Resume
-* Rust Backend Jobs
-
----
