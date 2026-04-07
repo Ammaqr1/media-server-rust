@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rust Media Server</title>
+</head>
+<body>
+
+<h1>Upload Video</h1>
+
+<input type="file" id="file">
+<button onclick="upload()">Upload</button>
+
+<h2>Videos</h2>
+
+<ul id="videos"></ul>
+
+<script>
+
+    async function upload(){
+
+        let file = document.getElementById("file").files[0]
+
+        let form = new FormData()
+        form.append("file", file)
+
+        await fetch("/upload",{
+            method:"POST",
+            body:form
+        })
+
+        loadVideos()
+    }
+
+    async function loadVideos(){
+
+        let res = await fetch("/videos")
+        let data = await res.json()
+
+        let ul = document.getElementById("videos")
+        ul.innerHTML = ""
+
+        for(let v of data.videos){
+
+            let li = document.createElement("li")
+
+            li.innerHTML = `
+
+<a href="/stream/${v}" target="_blank">
+${v}
+</a>`
+
+
+
+            ul.appendChild(li)
+        }
+
+    }
+
+    loadVideos()
+
+</script>
+
+</body>
+</html>
