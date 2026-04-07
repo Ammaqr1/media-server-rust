@@ -16,22 +16,15 @@ A **high-performance media streaming server** built with **Rust + Axum** that su
 
 ## Upload UI
 
+<img width="1913" height="1003" alt="Upload UI" 
+src="https://github.com/user-attachments/assets/5508c631-71c2-4374-82cb-8c8132ade7e7" />
 
-```
-<img width="1913" height="1003" alt="Screenshot From 2026-04-07 17-42-05" src="https://github.com/user-attachments/assets/5508c631-71c2-4374-82cb-8c8132ade7e7" />
-
-```
 
 ## Streaming Demo
 
+[Screencast From 2026-04-07 17-41-33.webm](https://github.com/user-attachments/assets/57287f8f-576f-40c9-a4b1-d14950be6d6f)
 
 
-`[Screencast From 2026-04-07 17-41-33.webm](https://github.com/user-attachments/assets/57287f8f-576f-40c9-a4b1-d14950be6d6f)
-``
-
-```
-
----
 
 # ✨ Features
 
