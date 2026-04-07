@@ -1,5 +1,5 @@
 use axum::{extract::Multipart, response::IntoResponse};
-
+use std::path::Path;
 use tokio::fs::File;
 use tokio::io::AsyncWriteExt;
 
@@ -23,10 +23,27 @@ pub async fn upload_video(mut multipart: Multipart) -> impl IntoResponse {
 
         let file_name = file_name.to_string();
 
+        let allowed = ["mp4","mkv","webm"];
+
+        let extension = match file_name.split(".").last(){
+            Some(ext) => ext.to_lowercase(),
+            None => return "Invalid format"
+        };
+
+        if !allowed.contains(&extension.as_str()) {
+            return "Only mp4,mkv, webm allowed"
+        }
+
         println!("The file_name is {file_name}");
         let data = field.bytes().await.unwrap();
 
         let file_path = format!("videos/{}", file_name);
+
+        if Path::new(&file_path).exists(){
+            println!("The file exist so returning the file");
+            return "File already exists";
+        }
+
         let mut file = File::create(file_path).await.unwrap();
         file.write_all(&data).await.unwrap();
     }
